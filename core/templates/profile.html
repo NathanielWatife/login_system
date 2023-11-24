@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h2>Your Profile Page</h2>
+        <form action="" method="post">
+            {% csrf_token %}
+            <div>
+                <label for="">First name</label>
+                <input type="text" name="fname" value="{{ user_profile.fname }}">
+            </div>
+    
+            <div>
+                <label for="">Surname</label>
+                <input type="text" name="sname" value="{{ user_profile.sname }}">
+            </div>
+    
+            <div>
+                <label for="">Lastname</label>
+                <input type="text" name="lname" value="{{ user_profile.lname }}">
+            </div>
+
+            <div>
+                <label for="">About</label>
+                <!-- <input type="text" name="bio" value="{{ user_profile.bio }}"> -->
+                <textarea name="bio" id="" cols="30" rows="10">{{ user_profile.bio }}</textarea>
+            </div>
+
+            <div>
+                <label for="">Date of birth</label>
+                <input type="date" name="dob" value="{{ user_profile.dob }}">
+            </div>
+
+            <div>
+                <label for=""> Profile Picture</label>
+                <img src="{{ user_profile.profileimg.url }}" alt="" srcset="">
+                <input type="file" name="image" value="" id="">
+            </div>
+
+            <div>
+                <label for="">Location</label>
+                <input type="text" name="location" value="{{ user_profile.location }}">
+            </div>
+
+            <div>
+                <button type="submit">Save</button>
+                <button type="submit"><a href="/">Cancel</a></button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

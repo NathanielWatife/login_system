@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/signin">Login</a></li>
+        </ul>
+    </nav>
+    <div>
+        <h1>Register an account with us</h1>
+    </div>
+    <form action="" method="post">
+        {% csrf_token %}
+        <div>
+            <label for="">Username</label>
+            <input type="text" name="username" placeholder="Enter your username" required>
+        </div>
+
+
+        <div>
+            <label for="">Email</label>
+            <input type="email" name="email" placeholder="Enter your email" required>
+        </div>
+
+        <div>
+            <label for="">password</label>
+            <input type="password" name="password" placeholder="Enter your password" required>
+        </div>
+
+        <button type="submit">Save and Register</button>
+    </form>
+</body>
+</html>
