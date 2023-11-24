@@ -59,6 +59,7 @@ def signin(request):
         # if user details recognised
         if user is not None:
             auth.login(request, user)
+            messages.info(request, "Success")
             return redirect('/')
         else:
             messages.info(request, "Invalid detials")
